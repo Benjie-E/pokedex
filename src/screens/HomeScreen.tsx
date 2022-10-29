@@ -6,7 +6,6 @@ import CharacterCard, { generationNumbers } from "../components/PokemonCard";
 const HomeScreen: React.FC = () => {
   const [name, setName] = useState("");
   const [generation, setGeneration] = useState<generationNumbers>("I");
-  const [typeSearch, setTypeSearch] = useState<typeOptions | "">("");
   const { data } = useQuery(["pokemon"], () => getPokemonAsync(), {
     select: (pokemon) =>
       pokemon.filter((pokemon) =>
