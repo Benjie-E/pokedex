@@ -1,8 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
-import { useState, useEffect, useCallback } from "react";
-import { getPokemonAsync, PokemonType, typeOptions } from "../api/pokedex-api";
+import { useState } from "react";
+import { getPokemonAsync, typeOptions } from "../api/pokedex-api";
 import CharacterCard, { generationNumbers } from "../components/PokemonCard";
-//import HouseCount from "../components/HouseCount";
 
 const HomeScreen: React.FC = () => {
   const [name, setName] = useState("");

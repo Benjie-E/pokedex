@@ -50,17 +50,17 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon, generation }) => {
 
       <div className="flex flex-col justify-end">
         {
-          <span>
+          <>
             {pokemon.types?.map((t) => (
               <TypeObject
                 key={`${t.type.name}-${pokemon.id}`}
                 type={t.type.name}
               />
             ))}
-          </span>
+          </>
         }
       </div>
-      <span>
+      <div className="grid grid-cols-3 justify-start flex-grow">
         {pokemon.abilities?.map((a) => (
           <Ability
             key={`${a.ability.name}-${pokemon.id}`}
@@ -68,7 +68,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon, generation }) => {
             ability={a.ability.name}
           />
         ))}
-      </span>
+      </div>
       
     </div>
   );
