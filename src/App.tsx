@@ -28,7 +28,8 @@ function App() {
             />
             <Route path={"/pokemon/:id"} element={<PokemonScreen />} />
           </Route>
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="/home" element={<HomeScreen />} />
+          <Route path="/*" element={<ErrorPage />} />
 
         </Routes>
       </BrowserRouter>
