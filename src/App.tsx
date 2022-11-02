@@ -21,14 +21,14 @@ function App() {
               path={"/"}
               element={
                 <Suspense fallback={<h1 className="text-5xl">Loading...</h1>}>
-                  <HomeScreen />
                 </Suspense>
                 
               }
             />
             <Route path={"/pokemon/:id"} element={<PokemonScreen />} />
           </Route>
-          <Route path="*" element={<ErrorPage />} />
+          <Route path="/home" element={<HomeScreen />} />
+          <Route path="/*" element={<ErrorPage />} />
 
         </Routes>
       </BrowserRouter>
