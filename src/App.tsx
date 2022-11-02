@@ -21,7 +21,6 @@ function App() {
               path={"/"}
               element={
                 <Suspense fallback={<h1 className="text-5xl">Loading...</h1>}>
-                  <HomeScreen />
                 </Suspense>
                 
               }
