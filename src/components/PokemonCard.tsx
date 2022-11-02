@@ -46,7 +46,7 @@ const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon, generation }) => {
       />
       <div>
         <div className="rounded bg-black id-box">{pokemon.id}</div>
-        <h3 className="name-font"><a href={formUrl}>{pokemon.name.toUpperCase()}</a> </h3>
+        <h3><a href={formUrl} className="name-font">{pokemon.name.toUpperCase()}</a> </h3>
         <div>Weight: {pokemon.weight}kg</div>
         <div>Height: {pokemon.height}m </div>
       </div>

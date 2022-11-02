@@ -4,7 +4,7 @@ const Layout: React.FC = () => {
   return (
     <>
       <header className="">
-        <h1>Pokédex App</h1>
+        <h1 className="">Pokédex App</h1>
       </header>
       <main className="w-screen flex flex-col">
         <Outlet />

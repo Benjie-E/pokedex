@@ -82,9 +82,19 @@ export type PokemonType = {
     }
   ];
 };
-
+export type PokemonSpecies = {
+  "evolves_from_species": {
+    name: string;
+  };
+};
 const baseURI = "https://pokeapi.co/api/v2/";
 
+export const getEvolutionAsync = async (id: string | number) => {
+  const response = await fetch(`${baseURI}pokemon-species/${id}`);
+  const json = await response.json();
+
+  return json as PokemonSpecies;
+};
 export const getPokemonAsync = async () => {
   const pokemonRange = Array.from(Array(151).keys()).map((x) => x + 1);
   const urls = pokemonRange.map((n) => `${baseURI}pokemon/${n}`);
@@ -96,12 +106,12 @@ export const getPokemonAsync = async () => {
   return data as PokemonType[];
 };
 
-export const getSinglePokemonAsync = async (id:string|number) => {
+export const getSinglePokemonAsync = async (id: string | number) => {
   const response = await fetch(`${baseURI}pokemon/${id}`);
   const json = await response.json();
 
   return json as PokemonType;
-}
+};
 
 export const getAbilityAsync = async (url: string) => {
   const response = await fetch(url);
