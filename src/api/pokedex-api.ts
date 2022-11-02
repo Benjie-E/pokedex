@@ -96,6 +96,13 @@ export const getPokemonAsync = async () => {
   return data as PokemonType[];
 };
 
+export const getSinglePokemonAsync = async (id:string|number) => {
+  const response = await fetch(`${baseURI}pokemon/${id}`);
+  const json = await response.json();
+
+  return json as PokemonType;
+}
+
 export const getAbilityAsync = async (url: string) => {
   const response = await fetch(url);
   const json = await response.json();

@@ -15,7 +15,6 @@ const HomeScreen: React.FC = () => {
   });
   return (
     <div className="App">
-      <h1>Pokédex App</h1>
       <input
         type="text"
         value={name}

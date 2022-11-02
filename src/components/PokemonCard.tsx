@@ -4,7 +4,7 @@ import Ability from "./Ability";
 import TypeObject from "./Type";
 
 type PokemonCardProps = {
-  pokemon: PokemonType;
+  pokemon: PokemonType|undefined;
   generation: generationNumbers;
 };
 export type generationNumbers = "I" | "II" | "III" | "IV" | "V" | "VI";
@@ -27,6 +27,9 @@ const getSprite = (generation: generationNumbers, pokemon: PokemonType) => {
 };
 
 const PokemonCard: React.FC<PokemonCardProps> = ({ pokemon, generation }) => {
+  if(pokemon===undefined){
+    return<>Invalid Name</>
+  }
   useEffect(() => {
     getSprite(generation, pokemon);
   }, [generation]);
